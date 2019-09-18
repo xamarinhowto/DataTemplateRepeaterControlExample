@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="DataTemplateRepeaterControl.Views.Cells.ItemACell">
+    <ViewCell.View>
+        <Grid Padding="8">
+            <Frame HorizontalOptions="FillAndExpand"
+                   HasShadow="true">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Source="{Binding Image}"
+                           WidthRequest="80"
+                           HeightRequest="80"
+                           Aspect="AspectFit" />
+                    <StackLayout Grid.Column="1"
+                                 Orientation="Vertical">
+                        <Label Text="{Binding Text}" />
+                        <Label Text="{Binding Description}" />
+                    </StackLayout>
+                    <Image Grid.Column="2"
+                           HeightRequest="24"
+                           Margin="0,15"
+                           VerticalOptions="Start"
+                           HorizontalOptions="End"
+                           Source="arrow.png"
+                           Aspect="AspectFit" />
+                </Grid>
+            </Frame>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

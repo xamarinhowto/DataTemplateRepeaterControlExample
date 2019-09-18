@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Class="DataTemplateRepeaterControl.Views.Cells.ItemCCell">
+    <ViewCell.View>
+        <Grid Padding="8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <BoxView HeightRequest="0.5"
+                         Grid.Row="0"
+                         Grid.ColumnSpan="2"
+                         BackgroundColor="DarkBlue"
+                         VerticalOptions="Start" />
+                <Label HeightRequest="50"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Text="{Binding Text}" />
+                <Image x:Name="RowImage"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Source="{Binding Image}"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Aspect="AspectFit" />
+                <Label x:Name="RowDescription"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding Description}" />
+                <Image x:Name="ArrowImage"
+                       Grid.Column="2"
+                       Rotation="-90"
+                       HeightRequest="16"
+                       Source="arrow.png"
+                       Aspect="AspectFit" />
+                <BoxView Grid.Row="0"
+                         Grid.ColumnSpan="2"
+                         HeightRequest="0.5"
+                         BackgroundColor="DarkBlue"
+                         VerticalOptions="End" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Handle_Tapped" />
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

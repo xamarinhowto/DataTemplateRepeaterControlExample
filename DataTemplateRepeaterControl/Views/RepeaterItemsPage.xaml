@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage Title="Repeater"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:templateselectors="clr-namespace:DataTemplateRepeaterControl.TemplateSelectors"
+             xmlns:controls="clr-namespace:DarkIce.Toolkit.Core.Controls"
+             x:Class="DataTemplateRepeaterControl.Views.RepeaterItemsPage"
+             x:Name="RepeaterItemsPageRef">
+    <ScrollView>
+        <StackLayout Orientation="Vertical">
+            <controls:Repeater x:Name="RepeaterItems"
+                               ItemsSource="{Binding Items}"
+                               VerticalOptions="FillAndExpand">
+                <controls:Repeater.ItemTemplate>
+                    <templateselectors:SimpleTemplateSelector />
+                </controls:Repeater.ItemTemplate>
+            </controls:Repeater>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
